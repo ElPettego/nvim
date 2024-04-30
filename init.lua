@@ -521,7 +521,7 @@ vim.keymap.set('n', '@c', function ()
   local c = nil
   if ft == 'python' then
     c = hashtag
-  elseif ft == 'lua' then
+  elseif ft == 'lua' or ft == 'sql' then
     c = d_dash
   elseif ft == 'c' then
     c = d_slash
@@ -536,3 +536,7 @@ vim.keymap.set('n', '@c', function ()
 end, { expr = true })
 
 vim.keymap.set('v', '@c', ':normal @c<CR>')
+
+-- adds newline. it does not make sense. just do o<esc>
+-- vim.keymap.set('n', '@n', '<end>o<CR><esc>')
+
